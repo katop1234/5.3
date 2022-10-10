@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
     
       @ratings_to_show = []
       ratings_to_check = params.keys
-      if ratings_to_check.includes?(:ratings)
+      if ratings_to_check.include?(:ratings)
         @ratings_to_show = params[:ratings].keys
         @ratings_selected = get_ratings_selected(@ratings_to_show) # changed this from @ratings_to_show_hash 
       end

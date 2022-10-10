@@ -94,3 +94,95 @@ Cannot render console from 135.180.146.221! Allowed networks: 127.0.0.1, ::1, 12
 
 Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 135.180.146.221 at 2022-10-06 23:50:08 +0000
 Cannot render console from 135.180.146.221! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:16 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:10: syntax error, unexpected ':', expecting then or ';' or '\n'
+... if ratings_list.length() == 0:
+...                              ^
+/home/codio/workspace/rottenpotatoes-rails-intro/app/models/movie.rb:20: syntax error, unexpected end, expecting end-of-input):
+  app/models/movie.rb:10: syntax error, unexpected ':', expecting then or ';' or '\n'
+  app/models/movie.rb:20: syntax error, unexpected end, expecting end-of-input
+  app/controllers/movies_controller.rb:19:in `index'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.4ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.3ms)
+
+
+Started GET "/" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:36 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `includes?' for ["controller", "action"]:Array
+Did you mean?  include?):
+  app/controllers/movies_controller.rb:26:in `index'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.5ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.5ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.2ms)
+
+
+Started GET "/" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:54 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 200ms (Views: 198.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:54 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:54 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:54 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:48:54 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:49:01 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:59:11 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 168ms (Views: 166.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies?utf8=%E2%9C%93&ratings%5BG%5D=1&commit=Refresh" for 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4 at 2022-10-10 01:59:15 +0000
+Cannot render console from 2601:641:4000:33c0:3460:dc1a:a6ee:b1d4! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"utf8"=>"✓", "ratings"=>{"G"=>"1"}, "commit"=>"Refresh"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_flash.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
