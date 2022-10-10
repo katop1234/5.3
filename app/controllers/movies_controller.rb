@@ -5,9 +5,40 @@ class MoviesController < ApplicationController
       @movie = Movie.find(id) # look up movie by unique ID
       # will render app/views/movies/show.<extension> by default
     end
-  
+
+    def get_ratings_selected(ratings_to_show)
+      output = {}
+      for key in ratings_to_show
+        output[key] = ratings_to_show[key] || '1'
+      end
+      return output
+    end
+    
+    # todo change all this shit
     def index
       @movies = Movie.all
+      @all_ratings = Movie.all_ratings
+      @title_header = ''
+      @release_date_header = ''
+    
+      @ratings_to_show = []
+      ratings_to_check = params.keys
+      if ratings_to_check.includes?(:ratings)
+        @ratings_to_show = params[:ratings].keys
+        @ratings_selected = get_ratings_selected(@ratings_to_show) # changed this from @ratings_to_show_hash 
+      end
+    
+      @movies = Movie.with_ratings(@ratings_to_show)
+    
+      sort_by_action = params[:sort_by]
+      if !sort_by_action.nil?
+        @movies = @movies.order(sort_by_action)
+        if params[:sort_by] == "title"
+          @title_header = 'hilite bg-warning'
+        elsif
+          @release_date_header = 'hilite bg-warning' 
+        end
+      end
     end
   
     def new
