@@ -5,40 +5,57 @@ class MoviesController < ApplicationController
       @movie = Movie.find(id) # look up movie by unique ID
       # will render app/views/movies/show.<extension> by default
     end
-
-    def get_ratings_selected(ratings_to_show)
-      output = {}
-      for key in ratings_to_show
-        output[key] = ratings_to_show[key] || '1'
-      end
-      return output
-    end
     
     # todo change all this shit
+    def hashify(val)
+      Hash[val]
+    end
+    
+    def get_hash_of_all_ratings(all_ratings)
+      hashify(all_ratings.map {|rating| [rating, 1]})
+    end
+
+    def get_movies(m, sort_by_func)
+      m.where(rating: @ratings_to_show.keys).order(sort_by_func)
+    end
+    
     def index
-      @movies = Movie.all
       @all_ratings = Movie.all_ratings
+    
       @title_header = ''
+      if params[:sort_by] == 'title'
+        @title_header = 'hilite bg-warning'
+      end
+    
       @release_date_header = ''
-    
-      @ratings_to_show = []
-      ratings_to_check = params.keys
-      if ratings_to_check.include?(:ratings)
-        @ratings_to_show = params[:ratings].keys
-        @ratings_selected = get_ratings_selected(@ratings_to_show) # changed this from @ratings_to_show_hash 
+      if params[:sort_by] == 'release_date'
+        @release_date_header = 'hilite bg-warning'
       end
     
-      @movies = Movie.with_ratings(@ratings_to_show)
-    
-      sort_by_action = params[:sort_by]
-      if !sort_by_action.nil?
-        @movies = @movies.order(sort_by_action)
-        if params[:sort_by] == "title"
-          @title_header = 'hilite bg-warning'
-        elsif
-          @release_date_header = 'hilite bg-warning' 
-        end
+      if params.keys.include?(:ratings)
+        @ratings_to_show = params[:ratings] 
+      elsif session.keys.include?(:ratings)
+        @ratings_to_show = session[:ratings]
       end
+    
+      if not params.keys.include?(:sort_by)
+        sort_by = session[:sort_by]
+      else
+        sort_by = params[:sort_by] 
+      end
+    
+      @ratings_to_show = get_hash_of_all_ratings(@all_ratings)
+    
+      ratings_match = (params[:ratings] == session[:ratings])
+      sort_by_match = (params[:sort_by] == session[:sort_by])
+    
+      if not ratings_match or not sort_by_match
+        session[:ratings] = @ratings_to_show
+        session[:sort_by] = sort_by
+      end
+    
+      @movies = get_movies(Movie, sort_by)
+    
     end
   
     def new
